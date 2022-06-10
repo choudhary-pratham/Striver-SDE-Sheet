@@ -23,16 +23,21 @@ Node *firstNode(Node *head)
     if(head == NULL || head->next == NULL) return NULL;
     Node *slow = head;
     Node *fast = head;
+    Node *entry = head;
     
-    do{
-        slow = slow->next;
-        fast = fast->next->next;
-    }while(slow !=fast && slow && fast && fast->next);
-    fast = head;
-    while(slow!=fast && slow && fast)
+    while(fast->next && fast->next->next)
     {
         slow = slow->next;
-        fast = fast->next;
+        fast = fast->next->next;
+        if(slow == fast)
+        {
+            while(slow!=entry)
+            {
+                slow = slow->next;
+                entry = entry->next;
+            }
+            return slow;
+        }
     }
-    return slow;
+    return NULL;
 }
