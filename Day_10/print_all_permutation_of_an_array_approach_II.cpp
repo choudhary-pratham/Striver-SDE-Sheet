@@ -1,4 +1,4 @@
-void f(int ind,string s, vector<string>&ans)
+void print_permutations(int ind,string s, vector<string>&ans)
 {
     if(ind == s.size())
     {
@@ -15,6 +15,6 @@ void f(int ind,string s, vector<string>&ans)
 vector<string> findPermutations(string &s) {
     // Write your code here.
     vector<string>ans;
-    f(0,s,ans);
+    print_permutations(0,s,ans);
     return ans;
 }
