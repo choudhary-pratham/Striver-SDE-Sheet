@@ -33,5 +33,6 @@ int chessTournament(vector<int> arr , int n ,  int c){
             high = mid-1;
         }
     }
+    // high can also be returned as the final ans
     return res;
 }
