@@ -20,7 +20,7 @@
 bool helper(BinaryTreeNode<int>* root,int lb,int ub)
 {
     if(root == NULL) return true;
-    if(root->data<lb || root->data>ub) return false;
+    if(root->data<=lb || root->data>=ub) return false;
     return helper(root->left,lb,root->data) && helper(root->right,root->data,ub);
 }
 bool validateBST(BinaryTreeNode<int> *root) {
