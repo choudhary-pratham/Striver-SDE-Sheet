@@ -17,22 +17,22 @@
     };
 
 ************************************************************/
-void helper(TreeNode<int>*root,int &k,int &count)
+void helper(TreeNode<int>*root,int &k,int &ans)
 {
     if(root == NULL) return;
-    helper(root->left,k,count);
+    helper(root->left,k,ans);
     k--;
     if(k == 0) 
     {
-        count = root->data;
+        ans = root->data;
         return;
     }
-    helper(root->right,k,count);
+    helper(root->right,k,ans);
 }
 int kthSmallest(TreeNode<int> *root, int k)
 {
 	//	Write the code here.
-    int count=0;
-    helper(root,k,count);
-    return count;
+    int ans=0;
+    helper(root,k,ans);
+    return ans;
 }
