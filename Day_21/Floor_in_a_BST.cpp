@@ -21,7 +21,7 @@
 int floorInBST(TreeNode<int> * root, int X)
 {
     // Write your code here.
-    int res = 0;
+    int res = -1;
     while(root!=NULL)
     {
         if(root->val <= X)
