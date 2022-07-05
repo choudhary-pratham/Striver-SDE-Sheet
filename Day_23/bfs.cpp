@@ -12,11 +12,11 @@ void print_bfs(int i,vector<int>adj[],vector<int>&ans,vector<int>&vis)
 {
     queue<int>q;
     q.push(i);
+    vis[i] = 1;
     while(!q.empty())
     {
         int node = q.front();
         q.pop();
-        vis[node] = 1;
         for(auto it:adj[node])
         {
             if(!vis[it])
