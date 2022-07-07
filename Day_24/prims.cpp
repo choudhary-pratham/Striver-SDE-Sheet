@@ -20,11 +20,13 @@ vector<pair<pair<int, int>, int>> calculatePrimsMST(int n, int m, vector<pair<pa
         mst[node] = 1;
         for(auto it:adj[node])
         {
-            if(mst[it.first] == 0 && key[it.first] > it.second)
+            int target = it.first;
+            int weight = it.second;
+            if(mst[target] == 0 && key[target] > weight)
             {
-                key[it.first] = it.second;
-                pq.push({key[it.first],it.first});
-                parent[it.first] = node;
+                key[target] = weight;
+                pq.push({key[target],target});
+                parent[target] = node;
             }
         }
     }
