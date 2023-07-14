@@ -11,16 +11,18 @@ long long maxSubarraySum(int arr[], int n)
     return maxi;
     /* Printing the subarray with maximum sum*/
     sum=0;
+    vector<int>ans;
     for (int i = 0; i < n; i++)
     {
         sum+=arr[i];
         if(sum>0 && sum<=maxi)
         {
-            cout<<arr[i]<<" ";
+            ans.push_back(arr[i]);
         }
         else
         {
             sum=0;
+            ans.clear();
         }
         if(sum == maxi) break;
     }
